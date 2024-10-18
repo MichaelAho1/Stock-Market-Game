@@ -209,15 +209,13 @@ canvas {
 }
 
 #tradeModal {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    width: 100%;
+    width: 500px;
     height: 100vh;
     margin-bottom: 20px;
-    position: fixed;
-    top: 0;
-    left: 0;
+    position: fixed; /* Keep fixed positioning */
+    top: 50%; /* Move down to the center vertically */
+    left: 50%; /* Move to the center horizontally */
+    transform: translate(-50%, -50%); /* Adjust to center */
     background-color: rgba(0, 0, 0, 0.75); 
 }
 
@@ -230,6 +228,7 @@ canvas {
     padding: 20px;
     overflow: hidden;
 }
+
 
 #topQuarter {
     font-size: 2em;
