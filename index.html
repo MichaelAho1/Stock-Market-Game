@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Stock Game</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+    <div id="imageOverlay"></div>
+    <div id="startMenu">
+        <h1 class="gameHeaders">Game Description</h1>
+        <h2 class="descriptions">You start off with $1500 and your goal is to become a millionaire before day 365. You can gain money quickly by utilizing the stock market and upgrades.</h2>
+        <h1 class="gameHeaders">Win Conditions</h1>
+        <h2 class="descriptions">Your net worth is greater than 1 million dollars before day 365.</h2>
+        <button id="playButton">Play Game</button>
+    </div>
+    
+   
+    <!--Creates the StockBar seen at the top of the page-->
+    <div id="stockbar" style="display: none;">
+        <section id="moving">
+            <div id="box1" class="box">DAVE<br>277.5<br><span style="color:red;">-0.763%</span></div>
+            <div id="box2" class="box">GOOGL<br>233.26<br><span style="color:green;">0.004%</span></div>
+            <div id="box3" class="box">GDM<br>589.95<br><span style="color:green;">0.875%</span></div>
+            <div id="box4" class="box">VTS<br>188.82<br><span style="color:green;">1.173%</span></div>
+            <div id="box5" class="box">OPPL<br>288.82<br><span style="color:green;">1.173%</span></div>
+            <div id="box6" class="box">MFLX<br>150.50<br><span style="color:red;">-0.500%</span></div>
+            <div id="box7" class="box">META<br>300.00<br><span style="color:green;">2.000%</span></div>
+            <div id="box8" class="box">NVDO<br>200.75<br><span style="color:red;">-1.200%</span></div>
+            <div id="box9" class="box">OAL<br>220.10<br><span style="color:green;">0.500%</span></div>
+            <div id="box10" class="box">V<br>175.85<br><span style="color:red;">-0.300%</span></div>
+        </section>
+    </div>
+    <!-- Creates the second division of the page which displays the salary, cash on hand, and the day-->
+    <div id="bankingInfo" style="display: none;">
+        <div id="leftSide">
+            <h1 style="color: rgb(230, 229, 229);">Checking Account: <span id="bankCash">10000</span>$</h1>
+            <h2 style="color: rgb(160, 158, 158);">Current Salary: <span id="salary">300</span>$ per day</h2>
+        </div>  
+        <div id="right1">
+            <button id="dayButton">END DAY</button>
+            <h2 id="dayTicker" style="color: rgb(155, 153, 153);"  >day: <span id="day">1</span></h2>
+        </div>    
+    </div>
+
+   <!--Creates the third division of the page which displays the portfolio information and the interactive buttons (transfer Funds etc.)  -->
+    <div id="portfolioInfo" style="display: none;">
+        <div class="left-side">
+            <div id="mainButtons">
+                <button id="transferButton">Transfer Funds</button>
+                <div id="upgrade" style="display: none;">
+                    <button class = "upgrades"id="upgradeButton">Upgrades</button>
+                </div>
+                <div id="upgradeModal" class="modal">
+                    <div class="modal-content">
+                        <span class="close">&times;</span>
+                        <h1>Upgrades</h1>
+                        <div class="upgrade-option">
+                            <button class="upgrade-button" id="salaryIncreaseButton">Salary</button>
+                            <span class="description" id="increaseButtonCap"><span style="color:rgb(138, 15, 15);">$<span id="salaryIncreaseCost">100</span></span> | Increases Salary.</span>
+                        </div>
+                        <div class="upgrade-option">
+                            <button class="upgrade-button" id="stockReliabilityButton">Luck</button>
+                            <span class="description"><span style="color:rgb(138, 15, 15);">$<span id="stockReliabilityCost">100</span></span> | Increases the chance of stocks in your portfolio to be positive by 1%.</span>
+                        </div>
+                        <h3>Current Stock reliability = <span id="stockReliability">0</span>%</h3> <br>
+                    </div>
+                </div>
+                <div id="transferModal" class="modal2">
+                    <div class="modal-content2">
+                        <span class="close2">&times;</span>
+                        <div id="topLine">
+                            <div id="availableCash">
+                                <h1>$<span id ="accountCash">1500</span> Cash Avialable</h1>
+                                <p id="descriptionCash" style="font-size: 0.65em;">Transfers Money from Checking to Portfolio.</p>
+                            </div>
+                            <div id="optionButtons">
+                                <button id="depositButton">Deposit</button>
+                                <button id="withdrawButton" style="background-color: gray";>Withdraw</button>
+                            </div>
+                        </div>
+                        <div id="line2">
+                            <input id="amountInput" type="number" name="transfer-amount" required placeholder="Amount">
+                        </div>
+                        <div id="withOrDepo">
+                            <button id="transferConfirmed">Deposit</button>
+                        </div>
+                    </div>
+                </div>
+                <button id="tradeButton">Trade Stocks</button>
+                <div id="tradeModal" class="modal3" style="display: none;">
+                    <div class="modal-content3">
+                        <span class="close3">&times;</span>
+                        <div id="topQuarter">
+                            <h1>Markets</h1>
+                            <h1>$<span id="totalMarket"></span></h1>
+                            <h2 id="marketMovement"><span id="totalMarketDifference">0.00</span>(<span id="totalMarketPercentage">0.00</span>%)</h2>
+                        </div>
+                        <div id="bottomHalf">
+                            <div class="stockItem">
+                                <div class="stockDetails">
+                                    <h1>DAVE</h1>
+                                    <h2>DaveINC.</h2>
+                                </div>
+                                <button class="stockValue">$243.54</button>
+                            </div>
+                            
+                            <div class="stockItem">
+                                <div class="stockDetails">
+                                    <h1>GOOGL</h1>
+                                    <h2>Googla</h2>
+                                </div>
+                                <button class="stockValue">$123.45</button>
+                            </div>
+                            
+                            <div class="stockItem">
+                                <div class="stockDetails">
+                                    <h1>GDM</h1>
+                                    <h2>GoldmonSochs</h2>
+                                </div>
+                                <button class="stockValue">$3200.12</button>
+                            </div>
+                            
+                            <div class="stockItem">
+                                <div class="stockDetails">
+                                    <h1>VTS</h1>
+                                    <h2>VanillaInc</h2>
+                                </div>
+                                <button class="stockValue">$850.89</button>
+                            </div>
+                            
+                            <div class="stockItem">
+                                <div class="stockDetails">
+                                    <h1>OPPL</h1>
+                                    <h2>Opple</h2>
+                                </div>
+                                <button class="stockValue">$290.65</button>
+                            </div>
+
+                            <div class="stockItem">
+                                <div class="stockDetails">
+                                    <h1>MFLX</h1>
+                                    <h2>Metflix</h2>
+                                </div>
+                                <button class="stockValue">$550.42</button>
+                            </div>
+                            
+                            <div class="stockItem">
+                                <div class="stockDetails">
+                                    <h1>META</h1>
+                                    <h2>Meto Platforms</h2>
+                                </div>
+                                <button class="stockValue">$370.22</button>
+                            </div>
+                            
+                            <div class="stockItem">
+                                <div class="stockDetails">
+                                    <h1>NVDO</h1>
+                                    <h2>Nvidio</h2>
+                                </div>
+                                <button class="stockValue">$621.55</button>
+                            </div>
+                            
+                            <div class="stockItem">
+                                <div class="stockDetails">
+                                    <h1>OAL</h1>
+                                    <h2>Ocean airlines</h2>
+                                </div>
+                                <button class="stockValue">$55.34</button>
+                            </div>
+                            
+                            <div class="stockItem">
+                                <div class="stockDetails">
+                                    <h1>V</h1>
+                                    <h2>Viso</h2>
+                                </div>
+                                <button class="stockValue">$192.11</button>
+                            </div>
+                            
+                        </div> 
+                        
+                        <div class="stockModal">
+                            <div class="stockModal-content">
+                                <span class="close">&times;</span>
+                                <h1>Buy <span id="modal-stock-name"></span></h1>
+                                <h2>$<span id="portfolioCash2">0.00</span> cash available</h2>
+                                <h2 id="availableShares">Shares available to sell: <span id="numberOfShares">0</span></h2>
+
+                                <input id="sharesInput" type="number" name="sharesAmount" required placeholder="Amount of Shares">
+                                <p>Market Price: <span id="modal-stock-price"></span></p>
+                                <p>Estimated Cost: $<span id="estimatedCost">0.00</span></p>
+                                <button id="buyShares">Buy</button>
+                                <button id="sellShares" class="sell-btn">Sell Shares</button>
+                            </div>
+                        </div>                       
+                    </div>
+                </div>
+            </div>
+        </div>  
+        <h1 style="font-size-adjust: 0.75; color: rgb(240, 239, 239);">Portfolio: $<span id = "portfolioCash">300,000.13</span></h1>
+        <h2 style="color: rgb(204, 201, 200);">$<span id="cashToTrade">10000.00</span> Available to trade</h2>
+        <h2 id="colorProfit" style="color: rgb(255, 207, 49);"><span id="profitScale">125.36</span>$ (<span id = "percentageScale">0.53</span>%) Today</h2>
+    </div>
+
+    <div id ="chartDivision" style ="align-content: center;">
+        <canvas id ="portfolioChart"></canvas>
+    </div>
+
+    <div id="purchaseHistoryContainer"></div>
+    </div>
+
+    
+    <div id="endGameModal" class="end-game-modal">
+        <div class="end-game-content">
+            <h1 id="gameOver">Game Over</h1>
+            <p id="finalMessage"></p>
+            <p id="netWorth"></p>
+            <p>Your final portfolio value: <span id="finalPortfolioValue"></span></p>
+            <p>Total Days Played: <span id="totalDaysPlayed"></span></p>
+            <div id="endGameSummary" class="end-game-summary">
+                <p>Final Bank Cash: <span id="finalBankCash"></span></p>
+                <p>Total Salary Earned: <span id="totalSalaryEarned"></span></p>
+            </div>
+            <button id="restartButton">Play Again</button>
+        </div>
+    </div>
+    
+   
+    <script src="script.js"></script>
+</body>
+</html>
