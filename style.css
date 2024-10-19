@@ -222,9 +222,10 @@ canvas {
 .modal-content3 {
     background-color: rgb(51, 51, 51);
     color: white;
-    margin-top: 0;
+    margin-top: 2%;
     margin-left: 10%;
     width: 80%;
+    max-width: 800px;
     height: 100%;
     padding: 20px;
     overflow: hidden;
