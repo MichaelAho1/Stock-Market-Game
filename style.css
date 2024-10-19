@@ -216,7 +216,6 @@ canvas {
     top: 50%; /* Move down to the center vertically */
     left: 50%; /* Move to the center horizontally */
     transform: translate(-50%, -50%); /* Adjust to center */
-    background-color: rgba(0, 0, 0, 0.75); 
 }
 
 .modal-content3 {
