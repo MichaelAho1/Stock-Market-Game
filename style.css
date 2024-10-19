@@ -225,7 +225,6 @@ canvas {
     margin-top: 2%;
     margin-left: 10%;
     width: 80%;
-    max-width: 800px;
     height: 100%;
     padding: 20px;
     overflow: hidden;
@@ -268,6 +267,7 @@ canvas {
 
 .stockValue {
     width: 20%;
+    min-width: 150px;
     color: white;
     border: none;
     cursor: pointer;
