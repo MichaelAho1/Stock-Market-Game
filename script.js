@@ -162,6 +162,8 @@ document.getElementById("salaryIncreaseButton").addEventListener("click", functi
         }
         document.getElementById("salary").textContent = salary;
         document.getElementById("bankCash").textContent = bankCash;
+    } else {
+        alert("You do not have enough cash in you checking account, End the day to get your daily salary.");
     }
 });
 
@@ -175,6 +177,8 @@ document.getElementById("stockReliabilityButton").addEventListener("click", func
         document.getElementById("stockReliabilityCost").textContent = stockReliabilityCost;
         document.getElementById("stockReliability").textContent = stockReliability;
         document.getElementById("bankCash").textContent = bankCash;
+    } else {
+        alert("You do not have enough cash in you checking account, End the day to get your daily salary.");
     }
 });
 
@@ -223,6 +227,8 @@ document.getElementById("transferConfirmed").addEventListener('click', function(
             document.getElementById("accountCash").textContent = bankCash.toFixed(2);
             document.querySelector('.modal2').style.display = 'none';
             updatePortfolioInformation();
+        } else {
+            alert("You do not have enough cash in you checking account, End the day to get your daily salary.");
         }
     } else {
         let withdrawAmount = parseInt(document.getElementById("amountInput").value);
@@ -235,6 +241,8 @@ document.getElementById("transferConfirmed").addEventListener('click', function(
             document.getElementById("accountCash").textContent = cashToTrade.toFixed(2);
             document.querySelector('.modal2').style.display = 'none';
             updatePortfolioInformation();
+        } else {
+            alert("You do not have enough portfolio cash, sell more stocks to have more portfolio cash.");
         }
     }
 });
@@ -491,36 +499,41 @@ document.getElementById("buyShares").addEventListener('click', function() {
     const stockName = document.getElementById('modal-stock-name').textContent;
     const stockPrice = parseFloat(document.getElementById('modal-stock-price').textContent).toFixed(2);
     sharesBought = parseInt(document.getElementById('sharesInput').value);
-    if (cashToTrade >= finalPrice) {
-        cashToTrade -= finalPrice;
-        document.getElementById("portfolioCash2").textContent = cashToTrade.toFixed(2);
-        document.getElementById("cashToTrade").textContent = cashToTrade.toFixed(2);
-        document.getElementById("portfolioCash").textContent = cashToTrade + portfolioStockValue;
-        let purchaseContainer = document.getElementById('purchaseHistoryContainer');
-        let existingStockDiv = Array.from(purchaseContainer.getElementsByClassName('purchase-item')).find(item => {
-            return item.querySelector('.stock-name').textContent === stockName;
-        });
-
-        if (existingStockDiv) {
-            let currentShares = parseInt(existingStockDiv.querySelector('.stock-shares span').textContent);
-            existingStockDiv.querySelector('.stock-shares span').textContent = currentShares + sharesBought;
-            let sharesAvailableElement = document.getElementById('availableShares'); 
-            sharesAvailableElement.textContent = `Shares available to sell: ${currentShares + sharesBought}`;
-        } else {
-            const purchaseDiv = document.createElement('div');
-            purchaseDiv.classList.add('purchase-item');
-            purchaseDiv.innerHTML = `<p class="stock-name">${stockName}</p>
-                <p class="stock-shares"><span>${sharesBought}</span> Shares</p>
-                <p class="stock-cost">$${stockPrice}</p>`;
-        
-            purchaseContainer.appendChild(purchaseDiv);
-
-            let sharesAvailableElement = document.getElementById('availableShares'); 
-            sharesAvailableElement.textContent = `Shares available to sell: ${sharesBought}`;
-        }    
-        ResetCloseModals();
+    console.log(sharesBought);
+    if(isNaN(sharesBought)) {
+        alert("You do not have enough cash in you portfolio. Transfer more funds from your checking account to buy more stocks.");
     } else {
-        alert("Add more cash to your portfolio in order to complete this trade.");
+        if (cashToTrade >= finalPrice) {
+            cashToTrade -= finalPrice;
+            document.getElementById("portfolioCash2").textContent = cashToTrade.toFixed(2);
+            document.getElementById("cashToTrade").textContent = cashToTrade.toFixed(2);
+            document.getElementById("portfolioCash").textContent = cashToTrade + portfolioStockValue;
+            let purchaseContainer = document.getElementById('purchaseHistoryContainer');
+            let existingStockDiv = Array.from(purchaseContainer.getElementsByClassName('purchase-item')).find(item => {
+                return item.querySelector('.stock-name').textContent === stockName;
+            });
+    
+            if (existingStockDiv) {
+                let currentShares = parseInt(existingStockDiv.querySelector('.stock-shares span').textContent);
+                existingStockDiv.querySelector('.stock-shares span').textContent = currentShares + sharesBought;
+                let sharesAvailableElement = document.getElementById('availableShares'); 
+                sharesAvailableElement.textContent = `Shares available to sell: ${currentShares + sharesBought}`;
+            } else {
+                const purchaseDiv = document.createElement('div');
+                purchaseDiv.classList.add('purchase-item');
+                purchaseDiv.innerHTML = `<p class="stock-name">${stockName}</p>
+                    <p class="stock-shares"><span>${sharesBought}</span> Shares</p>
+                    <p class="stock-cost">$${stockPrice}</p>`;
+            
+                purchaseContainer.appendChild(purchaseDiv);
+    
+                let sharesAvailableElement = document.getElementById('availableShares'); 
+                sharesAvailableElement.textContent = `Shares available to sell: ${sharesBought}`;
+            }    
+            ResetCloseModals();
+        } else {
+            alert("Add more cash to your portfolio in order to complete this trade.");
+        }
     }
 });
 
