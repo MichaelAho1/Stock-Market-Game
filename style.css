@@ -203,13 +203,21 @@ button:hover {
     color: #888;
     transition: color 0.2s;
     cursor: pointer;
-    z-index: 3;
+    z-index: 1;
 }
 .close4 {
     position: absolute;
-    right: 170px;
-    cursor: pointer;
+    right: 20px;
+    top: 20px;
     font-size: 28px;
+    color: #888;
+    cursor: pointer;
+    transition: color 0.2s;
+    z-index: 3;
+}
+
+.close4:hover {
+    color: #fff;
 }
 .upgrade-option {
     margin-top: 20px;
@@ -455,6 +463,7 @@ canvas {
     min-height: 200px;
     text-align: center;
     color: white;
+    position: relative; /* Add this to make absolute positioning work */
 }
 
 .stockModal-content h1 {
@@ -894,7 +903,6 @@ span[style*="color:red"] {
     border-radius: 8px;
     display: inline-flex;
     align-items: center;
-    gap: 6px;
     font-weight: 500;
     margin-top: 0;
 }
