@@ -6,7 +6,7 @@ document.getElementById("playButton").addEventListener("click", function() {
     document.getElementById("stockbar").style.display = "block";
     document.getElementById("bankingInfo").style.display = "block";
     document.getElementById("portfolioInfo").style.display = "block";
-    document.getElementById("upgrade").style.display = "flex";
+    
 
 
     //initializing variables

@@ -6,12 +6,13 @@ document.getElementById("salaryIncreaseButton").addEventListener("click", functi
         salaryIncreaseCost *= 2;
         if (salary > 500) {
             salary = 500;
-            document.getElementById("increaseButtonCap").innerHTML = '<span style="color: darkgreen; font-weight: bold;">Max Salary Achieved</span>';
+            document.getElementById("increaseButtonCap").innerHTML = '<span class="max-level">Max Salary Achieved</span>';
         } else {
             document.getElementById("salaryIncreaseCost").textContent = salaryIncreaseCost;
         }
         document.getElementById("salary").textContent = salary;
         document.getElementById("bankCash").textContent = bankCash;
+        document.getElementById("currentSalary").textContent = salary;
     } else {
         alert("You do not have enough cash in you checking account, End the day to get your daily salary.");
     }

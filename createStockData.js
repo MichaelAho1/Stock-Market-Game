@@ -33,10 +33,13 @@ function updateStockData() {
     let marketPercentage = (((marketTotalNew - marketTotalPrevious) / marketTotalPrevious) * 100);
     document.getElementById("totalMarketPercentage").textContent = marketPercentage.toFixed(2);
     document.getElementById("totalMarketDifference").textContent = marketDifference.toFixed(2);
+    let marketMovementElement = document.getElementById("marketMovement");
     if(marketDifference > 0) {
-        document.getElementById("marketMovement").style.color = 'green';
+        marketMovementElement.classList.remove('negative');
+        marketMovementElement.classList.add('positive');
     } else {
-        document.getElementById("marketMovement").style.color = 'red';
+        marketMovementElement.classList.remove('positive');
+        marketMovementElement.classList.add('negative');
     }
     marketTotalPrevious = marketTotalNew;
     stocks = temp;

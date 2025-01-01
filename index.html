@@ -36,8 +36,8 @@
     <!-- Creates the second division of the page which displays the salary, cash on hand, and the day-->
     <div id="bankingInfo" style="display: none;">
         <div id="leftSide">
-            <h1 style="color: rgb(230, 229, 229);">Checking Account: <span id="bankCash">10000</span>$</h1>
-            <h2 style="color: rgb(160, 158, 158);">Current Salary: <span id="salary">300</span>$ per day</h2>
+            <h1 style="color: rgb(230, 229, 229);">Checking Account:<span id="bankCash">10000</span>$</h1>
+            <h2 style="color: rgb(160, 158, 158);">Current Salary:<span id="salary">300</span>$ per day</h2>
         </div>  
         <div id="right1">
             <button id="dayButton">END DAY</button>
@@ -50,22 +50,51 @@
         <div class="left-side">
             <div id="mainButtons">
                 <button id="transferButton">Transfer Funds</button>
-                <div id="upgrade" style="display: none;">
-                    <button class = "upgrades"id="upgradeButton">Upgrades</button>
-                </div>
+                <button id="upgradeButton">Upgrades</button>
                 <div id="upgradeModal" class="modal">
                     <div class="modal-content">
                         <span class="close">&times;</span>
                         <h1>Upgrades</h1>
+                        
                         <div class="upgrade-option">
-                            <button class="upgrade-button" id="salaryIncreaseButton">Salary</button>
-                            <span class="description" id="increaseButtonCap"><span style="color:rgb(138, 15, 15);">$<span id="salaryIncreaseCost">100</span></span> | Increases Salary.</span>
+                            <button class="upgrade-button" id="salaryIncreaseButton">Increase Salary</button>
+                            <div id="increaseButtonCap">
+                                <h1 id="cost-description">
+                                    Increases your daily salary for:
+                                    <span class="cost-badge">$<span id="salaryIncreaseCost">250</span></span>
+                                </h1>
+                            </div>
+                            <div class="upgrade-stats">
+                                <div class="stat-item">
+                                    <span class="stat-label">Current Salary:</span>
+                                    <span class="stat-value">$<span id="currentSalary">150</span></span>
+                                </div>
+                                <div class="stat-item">
+                                    <span class="stat-label">Max Salary:</span>
+                                    <span class="stat-value">$500</span>
+                                </div>
+                            </div>
                         </div>
+
                         <div class="upgrade-option">
-                            <button class="upgrade-button" id="stockReliabilityButton">Luck</button>
-                            <span class="description"><span style="color:rgb(138, 15, 15);">$<span id="stockReliabilityCost">100</span></span> | Increases the chance of stocks in your portfolio to be positive by 1%.</span>
+                            <button class="upgrade-button" id="stockReliabilityButton">Increase Positive Movement</button>
+                            <div id="increaseButtonCap">
+                                <h1 id="cost-description">
+                                    Increases positive movement for:
+                                    <span class="cost-badge">$<span id="stockReliabilityCost">1000</span></span>
+                                </h1>
+                            </div>
+                            <div class="upgrade-stats">
+                                <div class="stat-item">
+                                    <span class="stat-label">Current Chance for stock to be positive:</span>
+                                    <span class="stat-value"><span id="stockReliability">53</span>%</span>
+                                </div>
+                                <div class="stat-item">
+                                    <span class="stat-label">Max Chance:</span>
+                                    <span class="stat-value">70%</span>
+                                </div>
+                            </div>
                         </div>
-                        <h3>Current Stock reliability = <span id="stockReliability">0</span>%</h3> <br>
                     </div>
                 </div>
                 <div id="transferModal" class="modal2">
@@ -94,7 +123,7 @@
                     <div class="modal-content3">
                         <span class="close3">&times;</span>
                         <div id="topQuarter">
-                    
+                            <h1></h1>
                             <h1>$<span id="totalMarket"></span></h1>
                             <h2 id="marketMovement"><span id="totalMarketDifference">0.00</span>(<span id="totalMarketPercentage">0.00</span>%)</h2>
                         </div>
@@ -194,7 +223,7 @@
         </div>  
         <h1 style="font-size-adjust: 0.75; color: rgb(240, 239, 239);">Portfolio: $<span id = "portfolioCash">300,000.13</span></h1>
         <h2 style="color: rgb(204, 201, 200);">$<span id="cashToTrade">10000.00</span> Available to trade</h2>
-        <h2 id="colorProfit" style="color: rgb(255, 207, 49);"><span id="profitScale">125.36</span>$ (<span id = "percentageScale">0.53</span>%) Today</h2>
+        <h2 id="colorProfit" style="color: rgb(255, 207, 49);"><span id="profitScale">125.36</span>$ (<span id="percentageScale">0.53</span>%) Today</h2>
     </div>
 
     <div id ="chartDivision" style ="align-content: center;">

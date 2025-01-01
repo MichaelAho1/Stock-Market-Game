@@ -64,7 +64,7 @@ function updateRotatingStockData() {
             } else {
                 span.style.color = 'red';
             }
-        } 
+        }
         count++;
     });
     calledBefore = true;
