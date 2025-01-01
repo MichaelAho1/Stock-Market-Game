@@ -45,6 +45,12 @@ document.getElementById("buyShares").addEventListener('click', function() {
     }
 });
 
+document.querySelectorAll('.close4').forEach(closeButton => {
+    closeButton.addEventListener('click', function() {
+        document.querySelector('.stockModal').style.display = 'none';  
+    });
+});
+
 //Resets the estimated cost and the users input and closes out of both modals. Then updates the portfolio Information.
 function ResetCloseModals() {
     document.querySelector('.stockModal').style.display = 'none';  

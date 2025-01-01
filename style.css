@@ -205,7 +205,12 @@ button:hover {
     cursor: pointer;
     z-index: 3;
 }
-
+.close4 {
+    position: absolute;
+    right: 170px;
+    cursor: pointer;
+    font-size: 28px;
+}
 .upgrade-option {
     margin-top: 20px;
     min-height: 75px;
@@ -889,6 +894,7 @@ span[style*="color:red"] {
     border-radius: 8px;
     display: inline-flex;
     align-items: center;
+    gap: 6px;
     font-weight: 500;
     margin-top: 0;
 }
