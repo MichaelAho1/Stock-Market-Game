@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Stock Game</title>
+    <title>Stock Simulator</title>
     <link rel="icon"  type="image/jpg" href="images/favicon.jpg">
     <link rel="stylesheet" href="style.css">
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
@@ -11,15 +11,45 @@
 <body>
     <div id="imageOverlay"></div>
     <div id="startMenu">
-        <h1 class="gameHeaders">Game Description</h1>
-        <h2 class="descriptions">You start off with $1500 and your goal is to become a millionaire before day 365. You can gain money quickly by utilizing the stock market and upgrades.</h2>
-        <h1 class="gameHeaders">Win Conditions</h1>
-        <h2 class="descriptions">Your net worth is greater than 1 million dollars before day 365.</h2>
-        <button id="playButton">Play Game</button>
+        <div class="start-content">
+            <h1 class="title">Stock Market Simulator</h1>
+            
+            <div class="info-section">
+                <h2 class="section-header">Description</h2>
+                <p class="description">Start your journey as an investor with $1,500 initial capital. Your mission is to become a millionaire through strategic stock market trading and smart upgrades before day 365.</p>
+            </div>
+
+            <div class="info-section">
+                <h2 class="section-header">Win Conditions</h2>
+                <p class="description">Achieve a net worth exceeding $1,000,000 before day 365.</p>
+            </div>
+
+            <div class="info-section">
+                <h2 class="section-header">Features</h2>
+                <div class="features-grid">
+                    <div class="feature-item">
+                        <span class="feature-icon">📈</span>
+                        <p>Real-time Trading</p>
+                    </div>
+                    <div class="feature-item">
+                        <span class="feature-icon">💰</span>
+                        <p>Portfolio Management</p>
+                    </div>
+                    <div class="feature-item">
+                        <span class="feature-icon">⭐</span>
+                        <p>Upgrades System</p>
+                    </div>
+                    <div class="feature-item">
+                        <span class="feature-icon">📊</span>
+                        <p>Market Analysis</p>
+                    </div>
+                </div>
+            </div>
+
+            <button id="playButton">Start Trading</button>
+        </div>
     </div>
     
-   
-    <!--Creates the StockBar seen at the top of the page-->
     <div id="stockbar" style="display: none;">
         <section id="moving">
             <div id="box1" class="box">DAVE<br>277.5<br><span style="color:red;">-0.763%</span></div>
@@ -33,7 +63,6 @@
             <div id="box9" class="box">OAL<br>220.10<br><span style="color:green;">0.500%</span></div>
         </section>
     </div>
-    <!-- Creates the second division of the page which displays the salary, cash on hand, and the day-->
     <div id="bankingInfo" style="display: none;">
         <div id="leftSide">
             <h1 style="color: rgb(230, 229, 229);">Checking Account:<span id="bankCash">10000</span>$</h1>
@@ -44,8 +73,6 @@
             <h2 id="dayTicker" style="color: rgb(155, 153, 153);"  >day: <span id="day">1</span></h2>
         </div>    
     </div>
-
-   <!--Creates the third division of the page which displays the portfolio information and the interactive buttons (transfer Funds etc.)  -->
     <div id="portfolioInfo" style="display: none;">
         <div class="left-side">
             <div id="mainButtons">
