@@ -366,14 +366,14 @@ canvas {
     min-width: 120px;
     font-size: 1.1em;
     border: 1px solid rgba(76, 175, 80, 0.3);
-    color: #4CAF50;
+    color: #d7f8d7;
     font-weight: bold;
     transition: all 0.3s ease, transform 0.2s ease;
 }
 
 .stockValue::before {
     content: '$';
-    color: rgba(76, 175, 80, 0.7);
+    color: #51fc51;
 
 }
 
@@ -383,27 +383,15 @@ canvas {
     transform: scale(1.05);
 }
 
-.stockValue:active {
-    transform: scale(0.95);
-}
-
 #bottomHalf::-webkit-scrollbar {
     width: 8px;
 }
 
-#bottomHalf::-webkit-scrollbar-track {
-    background: #0c0f11;
-    border-radius: 4px;
-}
-
 #bottomHalf::-webkit-scrollbar-thumb {
-    background: #4CAF50;
+    background: #454645;
     border-radius: 4px;
 }
 
-#bottomHalf::-webkit-scrollbar-thumb:hover {
-    background: #45a049;
-}
 
 .close3:hover {
     color: #fff;
