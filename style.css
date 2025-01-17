@@ -99,19 +99,6 @@ button:hover {
     font-weight: 500;
 }
 
-.box-symbol {
-    font-weight: bold;
-    color: #fff;
-    font-size: 12px;
-    margin-bottom: 1px;
-}
-
-.box-price {
-    color: #4CAF50;
-    font-size: 11px;
-    margin: 1px 0;
-}
-
 .box span {
     display: inline-block;
     padding: 1px 4px;
@@ -509,13 +496,6 @@ canvas {
     background-color: #da190b;
 }
 
-.stock-price-info {
-    margin: 15px 0;
-    padding: 10px;
-    background-color: rgb(60, 60, 60);
-    border-radius: 4px;
-}
-
 .purchase-item {
     padding: 15px;
     background-color: rgb(44, 43, 43);
@@ -562,16 +542,6 @@ canvas {
 
 #gameOver {
     font-size: 5em;
-}
-
-
-.descriptions {
-    margin-bottom: 20px;
-    font-size: 18px;
-}
-
-.gameHeaders {
-    font-size: 30px;
 }
 
 #marketMovement.positive {
