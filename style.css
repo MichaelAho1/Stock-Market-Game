@@ -1179,7 +1179,7 @@ span[style*="color:red"] {
     background: rgba(17, 17, 17, 0.95);
     border-radius: 20px;
     padding: 40px;
-    width: 90%;
+    width: 100%;
     max-width: 800px;
     box-shadow: 0 8px 32px rgba(76, 175, 80, 0.2);
     border: 1px solid rgba(76, 175, 80, 0.1);
@@ -1187,22 +1187,22 @@ span[style*="color:red"] {
 }
 
 .title {
-    font-size: 2.5em;
+    font-size: 2em;
     color: #4CAF50;
     text-align: center;
-    margin-bottom: 30px;
+    margin-bottom: 10px;
     text-shadow: 0 0 10px rgba(76, 175, 80, 0.3);
     font-weight: 700;
 }
 
 .info-section {
-    margin-bottom: 30px;
+    margin-bottom: 10px;
 }
 
 .section-header {
     color: #fff;
-    font-size: 1.5em;
-    margin-bottom: 15px;
+    font-size: 1.3em;
+    margin-bottom: 0px;
     text-align: left;
 }
 
@@ -1217,7 +1217,7 @@ span[style*="color:red"] {
 .features-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
-    gap: 20px;
+    gap: 10px;
     margin-top: 20px;
 }
 
@@ -1287,9 +1287,6 @@ span[style*="color:red"] {
         font-size: 1em;
     }
 
-    .features-grid {
-        grid-template-columns: repeat(2, 1fr);
-    }
 }
 
 @media (max-width: 480px) {
