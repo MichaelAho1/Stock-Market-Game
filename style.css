@@ -346,7 +346,7 @@ canvas {
     font-size: 0.8em;
 }
 
-.stockValue {
+.stockButton {
     background-color: #130d09;
     padding: 10px 20px;
     border-radius: 20px;
@@ -356,12 +356,6 @@ canvas {
     color: #d7f8d7;
     font-weight: bold;
     transition: all 0.3s ease, transform 0.2s ease;
-}
-
-.stockValue::before {
-    content: '$';
-    color: #51fc51;
-
 }
 
 .stockValue:hover {

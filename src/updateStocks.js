@@ -69,3 +69,49 @@ function updateRotatingStockData() {
     });
     calledBefore = true;
 }
+
+//Updates the 10 stocks with new values bases on a random selection that is slightly favored to increase.
+function updateStockData() {
+    const stockItems = document.querySelectorAll('.stockItem');
+    let temp = [];
+    let total = 0;
+    let count = 0;
+    let dayChange = 0;
+    stockItems.forEach(stockItem => {
+        let updatedValue = (stocks[count] * (Math.random() * 0.35 + stockUpperBound)).toFixed(2);
+        temp.push(updatedValue);
+        if(day === 1) {
+            dayChange = (Number(updatedValue) - Number(stocks[count])).toFixed(2);
+        } else {
+            dayChange = (Number(updatedValue) - Number(oldStockValues[count])).toFixed(2);
+        }
+        total += parseFloat(updatedValue);
+        const stockValueButton = stockItem.querySelector('.stockValue');
+        stockValueButton.textContent = updatedValue;
+        const stockValueChange = stockItem.querySelector('.dayChange')
+        stockValueChange.textContent = "$" + dayChange;
+        if(dayChange < 0) {
+            stockValueChange.style.color = 'red';
+        } else {
+            stockValueChange.style.color = 'green';
+        }
+        count++;
+    });
+    oldStockValues = temp;
+    document.getElementById("totalMarket").textContent = total.toFixed(2);
+    marketTotalNew = total.toFixed(2); 
+    let marketDifference = marketTotalNew - marketTotalPrevious;
+    let marketPercentage = (((marketTotalNew - marketTotalPrevious) / marketTotalPrevious) * 100);
+    document.getElementById("totalMarketPercentage").textContent = marketPercentage.toFixed(2);
+    document.getElementById("totalMarketDifference").textContent = marketDifference.toFixed(2);
+    let marketMovementElement = document.getElementById("marketMovement");
+    if(marketDifference > 0) {
+        marketMovementElement.classList.remove('negative');
+        marketMovementElement.classList.add('positive');
+    } else {
+        marketMovementElement.classList.remove('positive');
+        marketMovementElement.classList.add('negative');
+    }
+    marketTotalPrevious = marketTotalNew;
+    stocks = temp;
+}

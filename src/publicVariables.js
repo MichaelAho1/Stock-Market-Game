@@ -27,3 +27,4 @@ window.totalPortfolioPrevious;
 window.firstTime;
 window.calledBefore = false;
 window.availableShares;
+window.oldStockValues = [];
