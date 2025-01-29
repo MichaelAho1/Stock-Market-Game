@@ -602,6 +602,11 @@ span[style*="color:red"] {
     font-size: 11px;
 }
 
+#bank-header {
+    color: rgba(227, 230, 228, 0.76);
+    font-size: 2.0rem;
+}
+
 #bankingInfo {
     display: none;
     margin: 10px auto; 
@@ -623,6 +628,7 @@ span[style*="color:red"] {
     gap: 8px;
     flex: 1; 
     align-items: center; 
+    font-size: 1.2rem;
 }
 
 #right1 {
@@ -631,37 +637,14 @@ span[style*="color:red"] {
     align-items: center; 
     gap: 8px;
     flex: 1; 
-}
-
-#leftSide h1 {
-    font-size: 1.1em;
-    color: #fff;
-    display: flex;
-    align-items: center;
-}
-
-#leftSide h1::before {
-    content: '💰';
-    font-size: 0.9em;
-}
-
-#leftSide h2 {
-    font-size: 0.9em;
-    color: #4CAF50;
-    display: flex;
-    align-items: center;
-}
-
-#leftSide h2::before {
-    content: '💵';
-    font-size: 0.9em;
+    font-size: 1.1rem;
 }
 
 #dayButton {
-    background-color: #1a1a1a;
+    background-color: #1d1818;
     color: #fff;
     padding: 8px 16px;
-    border: 1px solid rgba(255, 152, 0, 0.3);
+    border: 1px solid rgba(233, 150, 25, 0.945);
     border-radius: 4px;
     font-size: 0.9em;
     transition: all 0.2s ease;
@@ -675,16 +658,9 @@ span[style*="color:red"] {
 }
 
 #dayTicker {
-    font-size: 0.9em;
+    font-size: 1.2rem;
     color: #888;
-    display: flex;
-    align-items: center;
     gap: 4px;
-}
-
-#dayTicker::before {
-    content: '📅';
-    font-size: 0.9em;
 }
 
 @keyframes valueChange {
