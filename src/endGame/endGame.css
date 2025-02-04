@@ -1,0 +1,31 @@
+.end-game-modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.8);
+    display: none; 
+    align-items: center;
+    flex-direction: column;
+}
+
+.end-game-content {
+    margin-top: 15%;
+    text-align: center;
+    background-color: rgb(68, 66, 66);
+    padding: 40px;
+    border-radius: 10px;
+}
+
+#gameOver {
+    font-size: 5em;
+}
+
+#restartButton {
+    background-color: rgb(245, 0, 143);
+    color: white;
+    padding: 10px 20px;
+    margin-top: 20px;
+    font-size: 16px;
+}

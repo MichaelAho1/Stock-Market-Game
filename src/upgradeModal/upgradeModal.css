@@ -1,0 +1,65 @@
+.upgrade-option {
+    margin-top: 20px;
+    min-height: 75px;
+    margin-bottom: 15px;
+    padding: 10px;
+    background-color: rgb(68, 68, 68);
+    border-radius: 5px;
+}
+
+.upgrade-option {
+    background-color: #0d0e0f;
+    padding: 20px;
+    margin-bottom: 20px;
+    border-radius: 10px;
+    border: 1px solid rgba(76, 175, 80, 0.1);
+    transition: all 0.3s ease;
+}
+
+.upgrade-option:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(76, 175, 80, 0.15);
+    background-color: #161616;
+}
+
+.upgrade-button {
+    background-color: #4CAF50;
+    color: white;
+    padding: 12px 25px;
+    border: none;
+    border-radius: 25px;
+    font-size: 1em;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    margin-bottom: 10px;
+    width: auto;
+    min-width: 120px;
+    width: 25%;
+}
+
+.upgrade-button:hover {
+    background-color: #45a049;
+    transform: scale(1.05);
+}
+
+#cost-description {
+    display: flex;
+}
+
+.cost-badge {
+    color: red;
+}
+
+#currentSalary {
+    font-weight:bolder;
+}
+
+.cost-badge {
+    color: red;
+}
+
+
+#stockReliability {
+    color: #fff;
+    font-weight: bold;
+}

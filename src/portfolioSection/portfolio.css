@@ -1,0 +1,103 @@
+#portfolioInfo {
+    display: none;
+    margin: 10px auto;
+    padding: 25px;
+    background: linear-gradient(145deg, #141414, #1a1a1a);
+    border-radius: 16px;
+    border: 1px solid rgba(76, 175, 80, 0.1);
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.4);
+    max-width: 800px;
+    width: 100%;
+}
+
+#portfolioInfo {
+    display: none;
+    margin-top: 10px;
+    padding: 10px;
+    background-color: rgb(51, 51, 51);
+    border-radius: 10px;
+}
+
+#portfolioInfo h1 {
+    font-size: 1.2em;
+    color: #fff;
+    margin: 0;
+}
+
+#portfolioInfo h2 {
+    font-size: 1em;
+    color: #4CAF50;
+    margin: 5px 0 0 0;
+}
+
+#mainButtons {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 12px;
+    margin-bottom: 25px;
+    padding: 8px;
+    background: rgba(0, 0, 0, 0.2);
+    border-radius: 12px;
+}
+
+#transferButton, #tradeButton, #upgradeButton {
+    background: linear-gradient(145deg, #1e1e1e, #242424);
+    color: #fff;
+    padding: 12px 20px;
+    border: none;
+    border-radius: 10px;
+    font-size: 0.9em;
+    font-weight: 500;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    margin: 0;
+    position: relative;
+    overflow: hidden;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    margin: 8px;
+    background-color: rgb(244, 67, 54);
+}
+
+#transferButton:hover, #tradeButton:hover, #upgradeButton:hover {
+    background: linear-gradient(145deg, #4CAF50, #45a049);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 15px rgba(76, 175, 80, 0.3);
+}
+
+#transferButton::before {
+    content: '💸';
+}
+
+#upgradeButton::before {
+    content: '⭐';
+}
+
+#tradeButton::before {
+    content: '📊';
+}
+
+#chartDivision {
+    padding-top: 2%;
+    padding-left: 30%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 70%;
+    height: 15vh;
+    margin-bottom: 20px;
+}
+
+canvas {
+    width: 100% !important;
+    height: 100% !important;
+}
+
+#purchaseHistoryContainer {
+    margin-top: 20px;
+    border-radius: 12px;
+    background: rgba(0, 0, 0, 0.2);
+    overflow: hidden;
+}

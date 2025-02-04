@@ -6,6 +6,15 @@
     <title>Market Simulator 📈</title>
     <link rel="icon"  type="image/jpg" href="images/favicon.jpg">
     <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="src/startGame/startGame.css">
+    <link rel="stylesheet" href="src/stockData/stockBar.css">
+    <link rel="stylesheet" href="src/portfolioSection/portfolio.css">
+    <link rel="stylesheet" href="src/bank/bank.css">
+    <link rel="stylesheet" href="src/upgradeModal/upgradeModal.css">
+    <link rel="stylesheet" href="src/portfolioSection/transferModal.css">
+    <link rel="stylesheet" href="src/Market/tradeModal.css">
+    <link rel="stylesheet" href="src/Market/stockModal.css">
+    <link rel="stylesheet" href="src/endGame/endGame.css">
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 </head>
 <body>
@@ -280,13 +289,13 @@
                 </div>
             </div>
         </div>  
-        <h1 style="font-size-adjust: 0.75; color: rgb(240, 239, 239);">Portfolio: $<span id = "portfolioCash">300,000.13</span></h1>
+        <h1 style="font-size-adjust: 0.75; color: rgb(240, 239, 239);">Portfolio: $<span id="portfolioCash">300,000.13</span></h1>
         <h2 style="color: rgb(204, 201, 200);">$<span id="cashToTrade">10000.00</span> Available to trade</h2>
         <h2 id="colorProfit" style="color: rgb(255, 207, 49);"><span id="profitScale">125.36</span>$ (<span id="percentageScale">0.53</span>%) Today</h2>
     </div>
 
-    <div id ="chartDivision" style ="align-content: center;">
-        <canvas id ="portfolioChart"></canvas>
+    <div id="chartDivision" style="align-content: center;">
+        <canvas id="portfolioChart"></canvas>
     </div>
 
     <div id="purchaseHistoryContainer"></div>
@@ -308,18 +317,17 @@
         </div>
     </div>
     
-   
+    <script src="src/portfolioSection/portfolioChart.js"></script>
     <script src="src/publicVariables.js"></script>
-    <script src="src/startGame.js"></script>
-    <script src="src/endDay.js"></script>
-    <script src="src/upgrades.js"></script>
-    <script src="src/bank.js"></script>
-    <script src="src/portfolioChart.js"></script>
-    <script src="src/stockModal.js"></script>
-    <script src="src/createStockData.js"></script>
-    <script src="src/updateStocks.js"></script>
-    <script src="src/sellShare.js"></script>
-    <script src="src/buyShare.js"></script>
-    <script src="src/endGame.js"></script>
+    <script src="src/startGame/startGame.js"></script>
+    <script src="src/bank/endDay.js"></script>
+    <script src="src/upgradeModal/upgrades.js"></script>
+    <script src="src/bank/bank.js"></script>
+    <script src="src/Market/stockModal.js"></script>
+    <script src="src/stockData/createStockData.js"></script>
+    <script src="src/stockData/updateStocks.js"></script>
+    <script src="src/Market/sellShare.js"></script>
+    <script src="src/buyShare/buyShare.js"></script>
+    <script src="src/endGame/endGame.js"></script>
 </body>
 </html>

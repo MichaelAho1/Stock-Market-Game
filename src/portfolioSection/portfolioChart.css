@@ -1,0 +1,15 @@
+#chartDivision {
+    padding-top: 2%;
+    padding-left: 30%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 70%;
+    height: 15vh;
+    margin-bottom: 20px;
+}
+
+canvas {
+    width: 100% !important;
+    height: 100% !important;
+}
