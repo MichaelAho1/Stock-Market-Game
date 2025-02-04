@@ -33,48 +33,6 @@ button {
     cursor: pointer;
 }
 
-button:hover {
-    background-color: rgb(69, 160, 73);
-}
-
-.modal {
-    display: none;
-    position: fixed;
-    z-index: 1;
-    padding-top: 60px;
-    left: 0;
-    top: 0;
-    width: 100%;
-    height: 100%;
-    overflow: auto;
-    background-color: rgba(0, 0, 0, 0.4);
-}
-
-.cost-badge {
-    color: red;
-}
-
-.modal-content {
-    background-color: rgb(27, 27, 27);
-    margin: 10% auto;
-    padding: 20px;
-    border-radius: 10px;
-    width: 95%;
-    max-width: 700px;
-    text-align: left;
-}
-
-.close {
-    position: absolute;
-    right: 20px;
-    top: 20px;
-    font-size: 28px;
-    color: #888;
-    transition: color 0.2s;
-    cursor: pointer;
-    z-index: 1;
-}
-
 input {
     padding: 10px;
     font-size: 14px;
@@ -134,16 +92,6 @@ span[style*="color:red"] {
 
 .value-update {
     animation: valueChange 0.3s ease;
-}
-
-#mainButtons {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 12px;
-    margin-bottom: 25px;
-    padding: 8px;
-    background: rgba(0, 0, 0, 0.2);
-    border-radius: 12px;
 }
 
 .portfolio-stats {
@@ -215,71 +163,12 @@ span[style*="color:red"] {
     }
 }
 
-.modal {
-    display: none;
-    position: fixed;
-    z-index: 2;
-    left: 0;
-    top: 0;
-    width: 100%;
-    height: 100%;
-    background-color: rgba(0, 0, 0, 0.85);
-    overflow-y: auto;
-    padding: 20px 0;
-}
-
-.modal-content {
-    position: relative;
-    background-color: rgb(17,17,17);
-    background-image: linear-gradient(rgba(76, 175, 80, 0.03) 1px, transparent 1px),
-                      linear-gradient(90deg, rgba(76, 175, 80, 0.03) 1px, transparent 1px);
-    background-size: 20px 20px;
-    margin: 20px auto;
-    width: 90%;
-    max-width: 500px;
-    border-radius: 12px;
-    padding: 30px;
-    box-shadow: 0 5px 25px rgba(76, 175, 80, 0.2);
-    border: 1px solid rgba(76, 175, 80, 0.1);
-}
-
-.modal-content h1 {
-    color: #4CAF50;
-    font-size: 1.8em;
-    margin-bottom: 25px;
-    text-align: center;
-    text-shadow: 0 0 10px rgba(76, 175, 80, 0.3);
-}
-
 .description {
     color: #888;
     font-size: 0.9em;
     display: block;
     margin-top: 10px;
     line-height: 1.4;
-}
-
-.modal-content h3 {
-    color: #4CAF50;
-    text-align: center;
-    margin-top: 20px;
-    font-size: 1.2em;
-}
-
-.modal .close {
-    position: absolute;
-    right: 20px;
-    top: 20px;
-    font-size: 28px;
-    color: #888;
-    cursor: pointer;
-    transition: color 0.2s;
-    z-index: 3;
-    margin-top: 0;
-}
-
-.modal .close:hover {
-    color: #fff;
 }
 
 .description span[style*="color:rgb(138, 15, 15)"] {
@@ -296,19 +185,4 @@ span[style*="color:red"] {
     border-radius: 4px;
     color: #4CAF50 !important;
     font-weight: bold;
-}
-
-@media screen and (max-width: 600px) {
-    .modal-content {
-        width: 95%;
-        padding: 20px;
-    }
-
-    .upgrade-button {
-        width: 100%;
-    }
-
-    .description {
-        font-size: 0.8em;
-    }
 }
