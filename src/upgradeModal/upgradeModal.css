@@ -93,7 +93,7 @@
     top: 0;
     width: 100%;
     height: 100%;
-    background-color: rgba(0, 0, 0, 0.85);
+    background-color: rgba(0, 0, 0, 0.9);
     overflow-y: auto;
     padding: 20px 0;
 }
@@ -101,56 +101,192 @@
 .modal-content {
     position: relative;
     background-color: rgb(17,17,17);
-    background-image: linear-gradient(rgba(76, 175, 80, 0.03) 1px, transparent 1px),
-                      linear-gradient(90deg, rgba(76, 175, 80, 0.03) 1px, transparent 1px);
-    background-size: 20px 20px;
+    background-image: 
+        linear-gradient(45deg, rgba(76, 175, 80, 0.03) 1px, transparent 1px),
+        linear-gradient(-45deg, rgba(76, 175, 80, 0.03) 1px, transparent 1px);
+    background-size: 30px 30px;
     margin: 20px auto;
     width: 90%;
-    max-width: 500px;
-    border-radius: 12px;
-    padding: 30px;
-    box-shadow: 0 5px 25px rgba(76, 175, 80, 0.2);
+    max-width: 600px;
+    border-radius: 16px;
+    padding: 35px;
+    box-shadow: 0 8px 32px rgba(76, 175, 80, 0.15);
     border: 1px solid rgba(76, 175, 80, 0.1);
+    backdrop-filter: blur(8px);
 }
 
 .modal-content h1 {
     color: #4CAF50;
-    font-size: 1.8em;
-    margin-bottom: 25px;
+    font-size: 2em;
+    margin-bottom: 30px;
     text-align: center;
-    text-shadow: 0 0 10px rgba(76, 175, 80, 0.3);
+    text-shadow: 0 0 15px rgba(76, 175, 80, 0.3);
+    letter-spacing: 1px;
 }
 
 .modal-content h3 {
     color: #4CAF50;
-    text-align: center;
     margin-top: 20px;
     font-size: 1.2em;
 }
 
 .modal .close {
     position: absolute;
-    right: 20px;
-    top: 20px;
+    right: 25px;
+    top: 25px;
     font-size: 28px;
     color: #888;
     cursor: pointer;
-    transition: color 0.2s;
-    z-index: 3;
-    margin-top: 0;
+    transition: all 0.3s ease;
+    z-index: 1;
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    background: rgba(0, 0, 0, 0.2);
 }
 
 .modal .close:hover {
     color: #fff;
+    background: rgba(255, 255, 255, 0.1);
+    transform: rotate(90deg);
 }
 
 .close {
     position: absolute;
-    right: 20px;
-    top: 20px;
+    right: 25px;
+    top: 25px;
     font-size: 28px;
     color: #888;
-    transition: color 0.2s;
+    transition: all 0.3s ease;
     cursor: pointer;
     z-index: 1;
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    background: rgba(0, 0, 0, 0.2);
+}
+
+.close:hover {
+    color: #fff;
+    background: rgba(255, 255, 255, 0.1);
+    transform: rotate(90deg);
+}
+
+.upgrade-option {
+    background: linear-gradient(145deg, #0d0e0f, #161616);
+    padding: 25px;
+    margin-bottom: 25px;
+    border-radius: 12px;
+    border: 1px solid rgba(76, 175, 80, 0.1);
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+}
+
+.upgrade-option:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 6px 20px rgba(76, 175, 80, 0.2);
+    border: 1px solid rgba(76, 175, 80, 0.2);
+}
+
+.upgrade-button {
+    background: linear-gradient(45deg, #4CAF50, #45a049);
+    color: white;
+    padding: 12px 30px;
+    border: none;
+    border-radius: 25px;
+    font-size: 1.1em;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    margin-bottom: 15px;
+    width: auto;
+    min-width: 200px;
+    box-shadow: 0 4px 15px rgba(76, 175, 80, 0.2);
+}
+
+.upgrade-button:hover {
+    background: linear-gradient(45deg, #45a049, #4CAF50);
+    transform: scale(1.05);
+    box-shadow: 0 6px 20px rgba(76, 175, 80, 0.3);
+}
+
+.upgrade-button:active {
+    transform: scale(0.98);
+}
+
+#cost-description {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin: 15px 0;
+    color: #ccc;
+    font-size: 1.1em;
+}
+
+.cost-badge {
+    color: #ff4444;
+    font-weight: bold;
+    background: rgba(255, 68, 68, 0.1);
+    padding: 5px 12px;
+    border-radius: 15px;
+    border: 1px solid rgba(255, 68, 68, 0.2);
+}
+
+.upgrade-stats {
+    margin-top: 20px;
+    padding: 15px;
+    background: rgba(0, 0, 0, 0.2);
+    border-radius: 10px;
+}
+
+.stat-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 8px 0;
+    color: #aaa;
+}
+
+.stat-value {
+    color: #4CAF50;
+    font-weight: bold;
+    font-size: 1.1em;
+}
+
+#currentSalary, #stockReliability {
+    color: #4CAF50;
+    font-weight: bold;
+    text-shadow: 0 0 10px rgba(76, 175, 80, 0.2);
+}
+
+@media screen and (max-width: 600px) {
+    .modal-content {
+        width: 95%;
+        padding: 25px;
+    }
+
+    .upgrade-button {
+        width: 100%;
+        min-width: unset;
+    }
+
+    .upgrade-option {
+        padding: 20px;
+    }
+
+    .modal-content h1 {
+        font-size: 1.6em;
+    }
+
+    #cost-description {
+        flex-direction: column;
+        text-align: center;
+        gap: 8px;
+    }
 }

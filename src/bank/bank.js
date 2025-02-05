@@ -69,3 +69,4 @@ document.querySelectorAll('.close2').forEach(closeButton => {
         this.closest('.modal2').style.display = 'none';
     });
 });
+

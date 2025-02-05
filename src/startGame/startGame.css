@@ -156,3 +156,27 @@
         font-size: 1.1em;
     }
 }
+
+.description {
+    color: #888;
+    font-size: 0.9em;
+    display: block;
+    margin-top: 10px;
+    line-height: 1.4;
+}
+
+.description span[style*="color:rgb(138, 15, 15)"] {
+    background-color: rgba(244, 67, 54, 0.1);
+    padding: 4px 8px;
+    border-radius: 4px;
+    font-weight: bold;
+    color: #f44336 !important;
+}
+
+.description span[style*="color: darkgreen"] {
+    background-color: rgba(76, 175, 80, 0.1);
+    padding: 4px 8px;
+    border-radius: 4px;
+    color: #4CAF50 !important;
+    font-weight: bold;
+}
